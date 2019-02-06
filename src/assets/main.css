@@ -1,0 +1,25 @@
+body {
+    color: #1a1a1a;
+    background: #eee;
+}
+
+#root {
+    background: #ffffff;
+    color: #4a4a4a;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 100vh;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+#root h1 {
+    font-size: 30px;
+}
+
+textarea, input {
+    outline: none;
+}
+
+#capita-checkbox {
+    margin: 5px;
+}
