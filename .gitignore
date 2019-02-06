@@ -42,8 +42,7 @@ yarn-error.log*
 *.out
 
 ### Go Patch ###
-/vendor/
-!vendor.json
+/vendor/**/
 /Godeps/
 
 ### JetBrains ###
