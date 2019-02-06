@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/siikasmaa/emissions/models"
-	"github.com/siikasmaa/emissions/utils"
+	"github.com/siikasmaa/emissions-api/models"
+	"github.com/siikasmaa/emissions-api/utils"
 	"net/http"
 	"strings"
 )
