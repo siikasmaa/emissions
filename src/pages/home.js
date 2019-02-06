@@ -20,7 +20,7 @@ class Home extends React.Component {
     }
 
     fetchAvailableCountries() {
-        fetch("/api/v1/emissions", {
+        fetch("/api/v1/countries", {
             method: "GET", dataType: "JSON", headers: {
                 "Content-Type": "application/json; charset=utf-8",
             }
