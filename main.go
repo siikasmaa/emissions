@@ -14,7 +14,6 @@ import (
 
 func main() {
 	// Fetch the initial data to the database
-    go update()
 
 	router := mux.NewRouter()
 
