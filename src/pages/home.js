@@ -92,7 +92,7 @@ class Home extends React.Component {
                         data={validList}
                         handleClick={this.handleCountrySelection.bind(this)}/>
                 </div>
-                <div className="row">
+                <div className="row noselect">
                     <Chart series={this.state.countryData} handlePop={this.popCountryFromSelected.bind(this)}/>
                 </div>
             </div>

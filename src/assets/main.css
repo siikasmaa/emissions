@@ -9,6 +9,7 @@ body {
     margin-left: 40px;
     margin-right: 40px;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+    padding-bottom: 20px;
 }
 
 #root h1 {
@@ -21,4 +22,13 @@ textarea, input {
 
 #capita-checkbox {
     margin: 5px;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
