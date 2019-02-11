@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/siikasmaa/emissions-api/controllers"
@@ -9,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 func main() {
@@ -36,8 +38,15 @@ func main() {
 
 	router.Use(logMiddleware)
 
+	srv := &http.Server{
+		Handler:      handlers.LoggingHandler(os.Stdout, router),
+		Addr:         "0.0.0.0:" + port,
+		WriteTimeout: 15 * time.Second,
+		ReadTimeout:  15 * time.Second,
+	}
+
 	log.Printf("Running on port %s\n", port)
-	log.Fatal(http.ListenAndServe(":"+port, router))
+	log.Fatal(srv.ListenAndServe())
 }
 
 func RootHandler(w http.ResponseWriter, r *http.Request) {

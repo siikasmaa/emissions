@@ -1,27 +1,37 @@
 body {
     color: #1a1a1a;
     background: #eee;
+    font-family: 'Inconsolata', monospace;
 }
 
 #root {
+    height: auto;
+    width: 100vw;
+}
+
+.app {
     background: #ffffff;
     color: #4a4a4a;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 3vw;
+    margin-right: 3vw;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
-    padding-bottom: 20px;
+    padding: 15px;
+    overflow: auto;
+    height: 100vh;
 }
 
-#root h1 {
-    font-size: 30px;
+h1 {
+    font-size: 5rem;
+    margin: 0 0 3rem 0;
+    color: #0277BD;
+    font-weight: bold;
 }
 
-textarea, input {
-    outline: none;
-}
-
-#capita-checkbox {
-    margin: 5px;
+h2 {
+    font-size: 4rem;
+    margin: 0 0 3rem 0;
+    color: #0277BD;
+    font-weight: bold;
 }
 
 .noselect {
@@ -32,3 +42,5 @@ textarea, input {
     -ms-user-select: none;
     user-select: none;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);

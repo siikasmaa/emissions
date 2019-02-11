@@ -10,6 +10,7 @@ import {
 } from "react-vis";
 import {Range} from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import '../assets/chart.css';
 
 class Chart extends React.Component {
     constructor(props) {
@@ -41,12 +42,14 @@ class Chart extends React.Component {
             <>
                 <label>
                     Emissions per capita
+                </label>
+                <label className="checkbox_rounded">
                     <input
                         type="checkbox"
                         checked={this.state.perCapita}
                         onChange={this.togglePerCapita}
-                        id="capita-checkbox"
                     />
+                    <div className="checkbox_hover"></div>
                 </label>
                 <DiscreteColorLegend
                     orientation="horizontal"

@@ -85,8 +85,10 @@ class Home extends React.Component {
         });
         return (
             <div className="container">
-                <h2>CO<sub>2</sub>-emissions</h2>
-                <p>Start by searching for a country or a region</p>
+                <div className="row">
+                    <h2>CO<sub>2</sub>-emissions</h2>
+                    <p>Start by searching for a country or a region</p>
+                </div>
                 <div className="row">
                     <Search
                         data={validList}

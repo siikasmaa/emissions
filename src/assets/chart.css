@@ -1,0 +1,28 @@
+.checkbox_rounded {
+    margin: 5px;
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+}
+
+.checkbox_rounded input {
+    opacity: 1;
+}
+
+.checkbox_rounded .checkbox_hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    border: 4px solid #d6d6d6;
+    transition: all 0.5s;
+}
+
+.checkbox_rounded input:checked + .checkbox_hover {
+    box-shadow: inset 0 0 0 8px #7494E9;
+    border: none;
+}
