@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"github.com/jasonlvhit/gocron"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/siikasmaa/emissions-api/controllers"
 	"github.com/siikasmaa/emissions-api/models"
@@ -13,8 +12,6 @@ import (
 )
 
 func main() {
-	// Fetch the initial data to the database
-
 	router := mux.NewRouter()
 
 	models.InitDb()
