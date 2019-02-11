@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
+	"github.com/jasonlvhit/gocron"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/siikasmaa/emissions-api/controllers"
 	"github.com/siikasmaa/emissions-api/models"
@@ -12,6 +13,13 @@ import (
 )
 
 func main() {
+	// Fetch the initial data to the database
+	go update()
+
+	// Set up Goroutine for background worker fetching data
+	gocron.Every(1).Day().At("03:30").Do(update)
+	go gocron.Start()
+
 	router := mux.NewRouter()
 
 	models.InitDb()

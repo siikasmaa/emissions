@@ -21,12 +21,14 @@ func update() {
 	for _, source := range sources {
 		file, err := utils.DownloadFile("data.zip", source)
 		if err != nil {
-			panic(err)
+			log.Fatal("Could not fetch World Bank data, ", err)
+			break
 		}
 
 		r, err := zip.OpenReader(file.Name())
 		if err != nil {
-			panic(err)
+			log.Fatal("Could not fetch World Bank data, ", err)
+			break
 		}
 		defer r.Close()
 
@@ -36,7 +38,8 @@ func update() {
 			xmlFile, err := f.Open()
 
 			if err != nil {
-				log.Println(err)
+				log.Fatal(err)
+				break
 			}
 
 			defer xmlFile.Close()
