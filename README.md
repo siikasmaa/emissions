@@ -1,6 +1,8 @@
 # Emissions-api
 _Web application for viewing the growth of CO<sub>2</sub>-emissions over the last few years._
 
+__This branch uses React version 16.8.3 instead of 16.7.0__
+
 ## Contents
 1. [Main objective](#main-objective)
 2. [User stories](#user-stories)
