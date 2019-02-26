@@ -1,16 +1,11 @@
-FROM node:10.12.0 as front
-# The base node image sets a very verbose log level.
+FROM node:11.10.0 as front
 ENV NPM_CONFIG_LOGLEVEL error
 ENV NPM_ENV production
-
-# Copy local files into the image.
 COPY . .
-
-# Build for production.
 RUN yarn install \
     && yarn run build
 
-FROM golang:1.10-alpine as builder
+FROM golang:1.11-alpine as builder
 RUN apk add --no-cache --update gcc musl-dev git mercurial
 ENV SRC_DIR=/go/src/github.com/siikasmaa/emissions-api/
 WORKDIR /app
