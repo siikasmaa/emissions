@@ -14,7 +14,6 @@ import (
 )
 
 func main() {
-
 	router := mux.NewRouter()
 
 	models.InitDb()

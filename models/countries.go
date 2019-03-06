@@ -29,6 +29,7 @@ type Country struct {
 	Year       int     `json:"year" gorm:"primary_key"`
 	Population int     `json:"population" gorm:"type:bigint"`
 	Emissions  float64 `json:"emissions"`
+	PerCapita  float64 `json:"emissions_per_capita" gorm:"type:float"`
 }
 
 type CountryResult struct {

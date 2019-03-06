@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-import '../assets/search.css';
+import '../assets/Search.css';
 
-const Search = ({data, handleClick}) => {
+const Search = ({data, handleClick, loading}) => {
 
     let searchInput;
     const [query, setQuery] = useState('');
@@ -28,7 +28,7 @@ const Search = ({data, handleClick}) => {
         <form action="#">
             <input
                 id="search-input"
-                placeholder="Search for..."
+                placeholder={loading ? "Loading..." : "Search for..."}
                 ref={input => {
                     searchInput = input
                 }}

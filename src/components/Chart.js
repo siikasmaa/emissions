@@ -11,9 +11,10 @@ import {
 } from "react-vis";
 import {Range} from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import '../assets/chart.css';
+import '../assets/Chart.css';
+import {connect} from "react-redux";
 
-const Chart = ({series, handlePop}) => {
+const Chart = ({handlePop, series}) => {
 
     const [perCapita, setPerCapita] = useState(true);
     const [xRange, setXRange] = useState([1960, 2018]);
@@ -85,7 +86,6 @@ const Chart = ({series, handlePop}) => {
             }
         </>
     )
-
 };
 
 Chart.propTypes = {
@@ -93,4 +93,6 @@ Chart.propTypes = {
     series: PropTypes.array
 };
 
-export default Chart;
+export default connect(state => ({
+    series: state.countryData.items
+}))(Chart);
